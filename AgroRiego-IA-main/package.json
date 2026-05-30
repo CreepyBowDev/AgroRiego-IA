@@ -1,0 +1,26 @@
+{
+  "name": "agrorieogia",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CreepyBowDev/AgroRiego-IA.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/CreepyBowDev/AgroRiego-IA/issues"
+  },
+  "homepage": "https://github.com/CreepyBowDev/AgroRiego-IA#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "db-local": "^3.1.0",
+    "express": "^5.2.1"
+  }
+}
