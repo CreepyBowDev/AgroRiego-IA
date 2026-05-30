@@ -49,7 +49,8 @@ plotForm.addEventListener("submit", async (event) => {
     const response = await createPlot(data);
 
     if (response.success === false) {
-        message.textContent = "❌ Error al guardar la parcela.";
+        console.error("Error guardar parcela:", response.message);
+        message.textContent = `❌ Error al guardar la parcela. ${response.message || "Ver consola para más detalles."}`;
         message.className = "error";
         return;
     }
