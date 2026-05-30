@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendación IA - AgroRiego IA</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="contenedor">
+
+        <h1>🌱 AgroRiego IA</h1>
+        <h2>Generar recomendación inteligente de riego</h2>
+
+        <div class="card">
+            <form id="recommendationForm">
+
+                <h3>📍 Parcela</h3>
+
+                <label for="plot_id">Seleccionar parcela</label>
+                <select id="plot_id" required>
+                    <option value="">Cargando parcelas...</option>
+                </select>
+
+                <h3>🌽 Datos del cultivo</h3>
+
+                <label for="crop_name">Nombre del cultivo</label>
+                <input type="text" id="crop_name" value="Maíz" required>
+
+                <label for="crop_stage">Etapa del cultivo</label>
+                <input type="text" id="crop_stage" value="Crecimiento vegetativo" required>
+
+                <label for="sowing_date">Fecha de siembra</label>
+                <input type="date" id="sowing_date" required>
+
+                <label for="drought_sensitivity">Sensibilidad a sequía</label>
+                <select id="drought_sensitivity" required>
+                    <option value="Alta">Alta</option>
+                    <option value="Media">Media</option>
+                    <option value="Baja">Baja</option>
+                </select>
+
+                <h3>⚡ Datos de la bomba</h3>
+
+                <label for="pump_type">Tipo de bomba</label>
+                <input type="text" id="pump_type" value="Eléctrica" required>
+
+                <label for="power_kw">Potencia kW</label>
+                <input type="number" id="power_kw" value="2.5" step="0.1" required>
+
+                <label for="flow_liters_minute">Caudal litros/minuto</label>
+                <input type="number" id="flow_liters_minute" value="120" required>
+
+                <label for="cost_kwh">Costo por kWh en Bs</label>
+                <input type="number" id="cost_kwh" value="1.2" step="0.1" required>
+
+                <label for="energy_source">Fuente de energía</label>
+                <input type="text" id="energy_source" value="Energía eléctrica" required>
+
+                <h3>☀️ Datos del clima</h3>
+
+                <label for="temperature">Temperatura °C</label>
+                <input type="number" id="temperature" value="34" required>
+
+                <label for="humidity">Humedad ambiental %</label>
+                <input type="number" id="humidity" value="35" required>
+
+                <label for="rain_probability">Probabilidad de lluvia %</label>
+                <input type="number" id="rain_probability" value="15" required>
+
+                <label for="wind_speed">Velocidad del viento km/h</label>
+                <input type="number" id="wind_speed" value="12" required>
+
+                <h3>💧 Datos del suelo</h3>
+
+                <label for="soil_moisture_estimated">Humedad estimada del suelo %</label>
+                <input type="number" id="soil_moisture_estimated" value="25" required>
+
+                <label for="producer_observation">Observación del productor</label>
+                <textarea id="producer_observation" rows="3">El suelo se ve seco</textarea>
+
+                <button type="submit">Generar recomendación IA</button>
+
+            </form>
+
+            <p id="message"></p>
+        </div>
+
+        <div class="card" id="resultCard" style="display: none;">
+            <h3>🤖 Resultado de la IA</h3>
+            <div id="recommendationResult"></div>
+        </div>
+
+        <div class="acciones">
+            <a href="plots.html">← Volver a parcelas</a>
+            <a href="dashboard.html">Volver al dashboard →</a>
+        </div>
+
+    </div>
+
+    <script type="module" src="js/recommendation.js"></script>
+</body>
+</html>

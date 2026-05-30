@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parcelas - AgroRiego IA</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="contenedor">
+
+        <h1>🌱 AgroRiego IA</h1>
+        <h2>Registrar parcela</h2>
+
+        <div class="card">
+            <form id="plotForm">
+
+                <label for="name">Nombre de la parcela</label>
+                <input type="text" id="name" placeholder="Ej: Parcela Norte" required>
+
+                <label for="municipality">Municipio</label>
+                <input type="text" id="municipality" placeholder="Ej: Montero" required>
+
+                <label for="community">Comunidad</label>
+                <input type="text" id="community" placeholder="Ej: Comunidad Demo" required>
+
+                <label for="area_hectares">Superficie en hectáreas</label>
+                <input type="number" id="area_hectares" placeholder="Ej: 3" required>
+
+                <label for="soil_type">Tipo de suelo</label>
+                <input type="text" id="soil_type" placeholder="Ej: Franco arenoso" required>
+
+                <label for="water_source">Fuente de agua</label>
+                <input type="text" id="water_source" placeholder="Ej: Pozo" required>
+
+                <button type="submit">Guardar parcela</button>
+
+            </form>
+
+            <p id="message"></p>
+        </div>
+
+        <div class="card">
+            <h3>Parcelas registradas</h3>
+            <div id="plotsList">
+                <p>No hay parcelas cargadas todavía.</p>
+            </div>
+        </div>
+
+        <div class="acciones">
+            <a href="dashboard.html">← Volver al dashboard</a>
+            <a href="recommendation.html">Ir a recomendación IA →</a>
+        </div>
+
+    </div>
+
+    <script type="module" src="js/plots.js"></script>
+</body>
+</html>
