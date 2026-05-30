@@ -1,5 +1,197 @@
-###
-GET http://localhost:3000/api/health 
+@baseUrl = http://localhost:3000/api
 
-###
-GET http://localhost:3000/api/users
+### =========================================================
+### 1. HEALTH CHECK BACKEND
+### =========================================================
+GET {{baseUrl}}/health
+
+
+### =========================================================
+### 2. PRODUCTOR DEMO
+### =========================================================
+GET {{baseUrl}}/users/demo
+
+
+### =========================================================
+### 3. CREAR PARCELA
+### Ejecuta esta petición primero.
+### Luego copia el id que viene en plot.id
+### y pégalo abajo en @plotId.
+### =========================================================
+POST {{baseUrl}}/plots
+Content-Type: application/json
+
+{
+  "name": "Parcela Norte",
+  "municipality": "Montero",
+  "community": "Comunidad Demo",
+  "area_hectares": 3,
+  "soil_type": "Franco arenoso",
+  "water_source": "Pozo"
+}
+
+
+### =========================================================
+### VARIABLES MANUALES
+### Reemplaza estos valores después de crear cada recurso.
+### Ejemplo:
+### @plotId = plot-1717000000000
+### @cropId = crop-1717000000000
+### @pumpId = pump-1717000000000
+### @weatherId = weather-1717000000000
+### IMPORTANTE: si estos valores siguen siendo los textos PEGAR_ID..., la petición 18 fallará.
+### =========================================================
+
+@plotId = PEGAR_ID_DE_LA_PARCELA
+@cropId = PEGAR_ID_DEL_CULTIVO
+@pumpId = PEGAR_ID_DE_LA_BOMBA
+@weatherId = PEGAR_ID_DEL_CLIMA
+
+
+### =========================================================
+### 4. VER TODAS LAS PARCELAS
+### =========================================================
+GET {{baseUrl}}/plots
+
+
+### =========================================================
+### 5. VER PARCELA POR ID
+### =========================================================
+GET {{baseUrl}}/plots/{{plotId}}
+
+
+### =========================================================
+### 6. CREAR CULTIVO
+### Ejecuta después de pegar @plotId.
+### Luego copia crop.id y pégalo en @cropId.
+### =========================================================
+POST {{baseUrl}}/crops
+Content-Type: application/json
+
+{
+  "plot_id": "{{plotId}}",
+  "crop_name": "Maíz",
+  "crop_stage": "Crecimiento vegetativo",
+  "sowing_date": "2026-05-30",
+  "drought_sensitivity": "Alta"
+}
+
+
+### =========================================================
+### 7. VER TODOS LOS CULTIVOS
+### =========================================================
+GET {{baseUrl}}/crops
+
+
+### =========================================================
+### 8. VER CULTIVO POR ID
+### =========================================================
+GET {{baseUrl}}/crops/{{cropId}}
+
+
+### =========================================================
+### 9. VER CULTIVOS POR PARCELA
+### =========================================================
+GET {{baseUrl}}/crops/plot/{{plotId}}
+
+
+### =========================================================
+### 10. CREAR BOMBA
+### Ejecuta después de pegar @plotId.
+### Luego copia pump.id y pégalo en @pumpId.
+### =========================================================
+POST {{baseUrl}}/pumps
+Content-Type: application/json
+
+{
+  "plot_id": "{{plotId}}",
+  "pump_type": "Eléctrica",
+  "power_kw": 2.5,
+  "flow_liters_minute": 120,
+  "cost_kwh": 1.2,
+  "energy_source": "Energía eléctrica"
+}
+
+
+### =========================================================
+### 11. VER TODAS LAS BOMBAS
+### =========================================================
+GET {{baseUrl}}/pumps
+
+
+### =========================================================
+### 12. VER BOMBA POR ID
+### =========================================================
+GET {{baseUrl}}/pumps/{{pumpId}}
+
+
+### =========================================================
+### 13. VER BOMBA POR PARCELA
+### =========================================================
+GET {{baseUrl}}/pumps/plot/{{plotId}}
+
+
+### =========================================================
+### 14. CREAR CLIMA
+### Ejecuta después de pegar @plotId.
+### Luego copia weather.id y pégalo en @weatherId.
+### =========================================================
+POST {{baseUrl}}/weather
+Content-Type: application/json
+
+{
+  "plot_id": "{{plotId}}",
+  "temperature": 34,
+  "humidity": 35,
+  "rain_probability": 15,
+  "wind_speed": 12,
+  "record_date": "2026-05-30"
+}
+
+
+### =========================================================
+### 15. VER TODOS LOS REGISTROS DE CLIMA
+### =========================================================
+GET {{baseUrl}}/weather
+
+
+### =========================================================
+### 16. VER CLIMA POR ID
+### =========================================================
+GET {{baseUrl}}/weather/{{weatherId}}
+
+
+### =========================================================
+### 17. VER ÚLTIMO CLIMA POR PARCELA
+### =========================================================
+GET {{baseUrl}}/weather/latest/{{plotId}}
+
+
+### =========================================================
+### 18. GENERAR RECOMENDACIÓN IA EN NODE.JS
+### Este es el endpoint principal del MVP.
+### Ya NO necesitas Python ni localhost:8000.
+### =========================================================
+POST {{baseUrl}}/recommendations/generate
+Content-Type: application/json
+
+{
+  "plot_id": "{{plotId}}",
+  "crop_id": "{{cropId}}",
+  "pump_id": "{{pumpId}}",
+  "weather_id": "{{weatherId}}",
+  "soil_moisture_estimated": 25,
+  "producer_observation": "El suelo se ve seco"
+}
+
+
+### =========================================================
+### 19. VER TODAS LAS RECOMENDACIONES
+### =========================================================
+GET {{baseUrl}}/recommendations
+
+
+### =========================================================
+### 20. VER RECOMENDACIONES POR PARCELA
+### =========================================================
+GET {{baseUrl}}/recommendations/plot/{{plotId}}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parcelas - AgroRiego IA</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">AgroRiego IA</div>
+    <nav class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="recommendation.html">Recomendación</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="page-header">
+      <div>
+        <h1>Gestionar parcelas</h1>
+        <p>Crea una parcela y revisa el listado actual de parcelas registradas.</p>
+      </div>
+    </section>
+
+    <section class="form-panel">
+      <form id="plotForm" class="form-card">
+        <h2>Registrar nueva parcela</h2>
+        <div class="form-row">
+          <label for="plotName">Nombre de parcela</label>
+          <input id="plotName" name="name" type="text" placeholder="Parcela Norte" required />
+        </div>
+        <div class="form-row">
+          <label for="municipality">Municipio</label>
+          <input id="municipality" name="municipality" type="text" placeholder="Montero" />
+        </div>
+        <div class="form-row">
+          <label for="community">Comunidad</label>
+          <input id="community" name="community" type="text" placeholder="Comunidad Demo" />
+        </div>
+        <div class="form-row horizontal-row">
+          <div>
+            <label for="areaHectares">Área (ha)</label>
+            <input id="areaHectares" name="area_hectares" type="number" min="0" step="0.1" placeholder="3" />
+          </div>
+          <div>
+            <label for="soilType">Tipo de suelo</label>
+            <input id="soilType" name="soil_type" type="text" placeholder="Franco arenoso" />
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="waterSource">Fuente de agua</label>
+          <input id="waterSource" name="water_source" type="text" placeholder="Pozo" />
+        </div>
+        <div class="form-row actions-row">
+          <button type="submit" class="button button-primary">Registrar parcela</button>
+          <span id="plotMessage" class="form-message"></span>
+        </div>
+      </form>
+    </section>
+
+    <section class="list-panel">
+      <div class="section-header">
+        <h2>Parcelas registradas</h2>
+        <p>Usa estas parcelas en la generación de recomendaciones IA.</p>
+      </div>
+      <div id="plotsList" class="cards-grid">Cargando parcelas...</div>
+    </section>
+  </main>
+  <script type="module" src="js/plots.js"></script>
+</body>
+</html>

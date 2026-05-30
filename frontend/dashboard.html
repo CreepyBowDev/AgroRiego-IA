@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - AgroRiego IA</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">AgroRiego IA</div>
+    <nav class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="plots.html">Parcelas</a>
+      <a href="recommendation.html">Recomendación</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="page-header">
+      <div>
+        <h1>Dashboard del productor</h1>
+        <p>Visión rápida del backend, productor demo y resultados recientes.</p>
+      </div>
+      <div class="page-actions">
+        <a class="button button-primary" href="plots.html">Registrar parcela</a>
+        <a class="button button-secondary" href="recommendation.html">Generar recomendación</a>
+      </div>
+    </section>
+
+    <section class="dashboard-grid">
+      <article class="status-card">
+        <h2>Estado del backend</h2>
+        <div class="status-row">
+          <span id="dashboardHealth" class="status-pill status-loading">Cargando...</span>
+        </div>
+      </article>
+
+      <article class="status-card">
+        <h2>Productor demo</h2>
+        <div id="demoUser" class="status-detail">Cargando datos del productor...</div>
+      </article>
+
+      <article class="status-card">
+        <h2>Estadísticas</h2>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-label">Parcelas</span>
+            <strong id="plotCount">0</strong>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Recomendaciones</span>
+            <strong id="recommendationCount">0</strong>
+          </div>
+        </div>
+      </article>
+
+      <article class="status-card full-card">
+        <h2>Última recomendación</h2>
+        <div id="latestRecommendation" class="status-detail">Cargando registro...</div>
+      </article>
+    </section>
+  </main>
+  <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
