@@ -1,7 +1,7 @@
 import { cropsModel } from "../models/cropsModel.js";
 
 export class cropsController {
-    static createCrop = async (req, res) => {
+    static create = async (req, res) => {
         try {
             const {
                 plot_id,
@@ -23,7 +23,7 @@ export class cropsController {
                 });
             }
 
-            const crop = await cropsModel.createCropModel({
+            const crop = await cropsModel.create({
                 plot_id,
                 crop_name,
                 crop_stage,
@@ -45,7 +45,7 @@ export class cropsController {
 
     static getCrops = async (req, res) => {
         try {
-            const crops = await getCropsModel();
+            const crops = await cropsModel.getCrops();
 
             return res.json({
                 message: "Cultivos obtenidos correctamente",
@@ -63,7 +63,7 @@ export class cropsController {
         try {
             const { id } = req.params;
 
-            const crop = await getCropByIdModel(id);
+            const crop = await cropsModel.getCropById(id);
 
             if (!crop) {
                 return res.status(404).json({
@@ -87,7 +87,7 @@ export class cropsController {
         try {
             const { plotId } = req.params;
 
-            const crops = await getCropsByPlotModel(plotId);
+            const crops = await cropsModel.getCropsByPlot(plotId);
 
             return res.json({
                 message: "Cultivos de la parcela obtenidos correctamente",

@@ -2,14 +2,11 @@ import { Router } from "express";
 
 import { pumpsController } from "../controllers/pumps.controller.js";
 
-const pumpsRouter = Router();
+export const pumpsRouter = Router();
 
-pumpsRouter.post("/", createPump);
-pumpsRouter.get("/", getPumps);
+pumpsRouter.post("/", pumpsController.create);
+pumpsRouter.get("/", pumpsController.getPumps);
 
-// Esta ruta debe ir antes de "/:id"
-router.get("/plot/:plotId", getPumpByPlot);
+pumpsRouter.get("/plot/:plotId", pumpsController.getPumpByPlot);
 
-router.get("/:id", getPumpById);
-
-export default router;
+pumpsRouter.get("/:id", pumpsController.getPumpById);

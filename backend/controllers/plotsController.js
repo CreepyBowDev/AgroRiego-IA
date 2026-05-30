@@ -1,11 +1,7 @@
-import {
-    createPlotModel,
-    getPlotsModel,
-    getPlotByIdModel
-} from "../models/plots.model.js";
+import { plotsModel } from "../models/plots.model.js";
 
 export class plotsController {
-    static createPlot = async (req, res) => {
+    static create = async (req, res) => {
         try {
             const {
                 name,
@@ -22,7 +18,7 @@ export class plotsController {
                 });
             }
 
-            const plot = await createPlotModel({
+            const plot = await plotsModel.create({
                 name,
                 municipality,
                 community,
@@ -45,7 +41,7 @@ export class plotsController {
 
     static getPlots = async (req, res) => {
         try {
-            const plots = await getPlotsModel();
+            const plots = await plotsModel.getPlots();
 
             return res.json({
                 message: "Parcelas obtenidas correctamente",
@@ -63,7 +59,7 @@ export class plotsController {
         try {
             const { id } = req.params;
 
-            const plot = await getPlotByIdModel(id);
+            const plot = await plotsModel.getPlotById(id);
 
             if (!plot) {
                 return res.status(404).json({
