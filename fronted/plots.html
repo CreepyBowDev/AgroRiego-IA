@@ -1,60 +1,162 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parcelas - AgroRiego IA</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Parcelas | AgroRiego IA</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
+    <header class="site-header">
+        <nav class="navbar" aria-label="Navegación principal">
+            <a href="index.html" class="logo" aria-label="Ir al inicio">
+                <span class="logo-mark">🌱</span>
+                <span>AgroRiego IA</span>
+            </a>
 
-    <div class="contenedor">
+            <div class="nav-actions">
+                <a href="dashboard.html" class="nav-link">
+                    Dashboard
+                </a>
 
-        <h1>🌱 AgroRiego IA</h1>
-        <h2>Registrar parcela</h2>
-
-        <div class="card">
-            <form id="plotForm">
-
-                <label for="name">Nombre de la parcela</label>
-                <input type="text" id="name" placeholder="Ej: Parcela Norte" required>
-
-                <label for="municipality">Municipio</label>
-                <input type="text" id="municipality" placeholder="Ej: Montero" required>
-
-                <label for="community">Comunidad</label>
-                <input type="text" id="community" placeholder="Ej: Comunidad Demo" required>
-
-                <label for="area_hectares">Superficie en hectáreas</label>
-                <input type="number" id="area_hectares" placeholder="Ej: 3" required>
-
-                <label for="soil_type">Tipo de suelo</label>
-                <input type="text" id="soil_type" placeholder="Ej: Franco arenoso" required>
-
-                <label for="water_source">Fuente de agua</label>
-                <input type="text" id="water_source" placeholder="Ej: Pozo" required>
-
-                <button type="submit">Guardar parcela</button>
-
-            </form>
-
-            <p id="message"></p>
-        </div>
-
-        <div class="card">
-            <h3>Parcelas registradas</h3>
-            <div id="plotsList">
-                <p>No hay parcelas cargadas todavía.</p>
+                <a href="recommendation.html" class="nav-link nav-link-strong">
+                    Recomendación IA
+                </a>
             </div>
-        </div>
+        </nav>
+    </header>
 
-        <div class="acciones">
-            <a href="dashboard.html">← Volver al dashboard</a>
-            <a href="recommendation.html">Ir a recomendación IA →</a>
-        </div>
+    <main class="plots-page">
+        <section class="page-hero compact-hero" aria-labelledby="plots-title">
+            <div>
+                <p class="section-label">
+                    Gestión de parcelas
+                </p>
 
-    </div>
+                <h1 id="plots-title">
+                    Registro de parcelas agrícolas
+                </h1>
+
+                <p class="page-description">
+                    Crea la parcela base para asociar posteriormente cultivo, bomba, clima y recomendación
+                    inteligente de riego.
+                </p>
+            </div>
+
+            <aside class="page-hero-note">
+                <span>01</span>
+                <p>
+                    La parcela es el punto central del flujo. Todo lo demás se vincula a ella.
+                </p>
+            </aside>
+        </section>
+
+        <section class="plots-layout enhanced-layout" aria-label="Registro y listado de parcelas">
+
+            <article class="form-card elevated-card" aria-labelledby="form-title">
+                <header class="card-header">
+                    <div>
+                        <span class="card-eyebrow">Nueva parcela</span>
+                        <h2 id="form-title">
+                            Datos principales
+                        </h2>
+                    </div>
+                    <span class="card-icon">📍</span>
+                </header>
+
+                <form id="plotForm" class="plot-form">
+
+                    <div class="form-grid two-columns">
+                        <div class="form-group">
+                            <label for="name">Nombre de la parcela</label>
+                            <input type="text" id="name" name="name" placeholder="Ej: Parcela Norte" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="municipality">Municipio</label>
+                            <input type="text" id="municipality" name="municipality" placeholder="Ej: Montero"
+                                required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="community">Comunidad</label>
+                            <input type="text" id="community" name="community" placeholder="Ej: Comunidad Demo"
+                                required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="area_hectares">Superficie en hectáreas</label>
+                            <input type="number" id="area_hectares" name="area_hectares" placeholder="Ej: 3" min="0"
+                                step="0.01" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="soil_type">Tipo de suelo</label>
+                            <input type="text" id="soil_type" name="soil_type" placeholder="Ej: Franco arenoso"
+                                required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="water_source">Fuente de agua</label>
+                            <input type="text" id="water_source" name="water_source" placeholder="Ej: Pozo" required />
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">
+                            Guardar parcela
+                        </button>
+
+                        <a href="recommendation.html" class="btn btn-secondary">
+                            Ir a recomendación
+                        </a>
+                    </div>
+
+                    <p id="message" class="form-message" aria-live="polite"></p>
+                </form>
+            </article>
+
+            <article class="list-card elevated-card" aria-labelledby="plots-list-title">
+                <header class="card-header">
+                    <div>
+                        <span class="card-eyebrow">Base registrada</span>
+                        <h2 id="plots-list-title">
+                            Parcelas guardadas
+                        </h2>
+                    </div>
+                    <span class="card-icon">🌾</span>
+                </header>
+
+                <p class="card-helper">
+                    Selecciona una parcela desde la pantalla de recomendación para completar cultivo, bomba y clima.
+                </p>
+
+                <div id="plotsList" class="plots-list modern-list">
+                    <div class="empty-state">
+                        <span>🌱</span>
+                        <p>No hay parcelas cargadas todavía.</p>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <section class="page-actions" aria-label="Acciones de navegación">
+            <a href="dashboard.html" class="btn btn-secondary">
+                ← Volver al dashboard
+            </a>
+
+            <a href="recommendation.html" class="btn btn-primary">
+                Generar recomendación IA →
+            </a>
+        </section>
+    </main>
 
     <script type="module" src="js/plots.js"></script>
 </body>
+
 </html>

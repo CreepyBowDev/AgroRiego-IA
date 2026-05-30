@@ -1,55 +1,188 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - AgroRiego IA</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Dashboard | AgroRiego IA</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
-
-    <div class="contenedor">
-
-        <h1>🌱 AgroRiego IA</h1>
-        <h2>Panel principal</h2>
-
-        <div class="card">
-            <h3>👨‍🌾 Productor Demo</h3>
-            <div id="demoUserInfo">
-                <p>Cargando productor demo...</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <h3>Estado del backend</h3>
-            <div id="healthStatus">
-                <p>Cargando estado del backend...</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <h3>Acciones rápidas</h3>
-
-            <a href="plots.html">
-                <button>Registrar parcela</button>
+    <header class="site-header">
+        <nav class="navbar" aria-label="Navegación principal">
+            <a href="index.html" class="logo" aria-label="Ir al inicio">
+                <span class="logo-mark">🌱</span>
+                <span>AgroRiego IA</span>
             </a>
 
-            <a href="recommendation.html">
-                <button>Generar recomendación IA</button>
-            </a>
-        </div>
+            <div class="nav-actions">
+                <a href="plots.html" class="nav-link">
+                    Parcelas
+                </a>
 
-        <div class="card">
-            <h3>Resumen de la demo</h3>
-            <p>
-                Primero registra una parcela. Luego ingresa datos del cultivo,
-                bomba, clima y humedad del suelo para generar una recomendación
-                inteligente de riego.
-            </p>
-        </div>
+                <a href="recommendation.html" class="nav-link nav-link-strong">
+                    Recomendación IA
+                </a>
 
-        <a href="index.html">← Volver al inicio</a>
+                <a href="index.html" class="nav-link">
+                    Inicio
+                </a>
+            </div>
+        </nav>
+    </header>
 
-    </div>
-    <script type="module" src="js/dashboard.js"></script></body>
+    <main class="dashboard-page">
+        <section class="dashboard-hero" aria-labelledby="dashboard-title">
+            <div>
+                <p class="section-label">
+                    Panel principal
+                </p>
+
+                <h1 id="dashboard-title">
+                    Centro de control agrícola
+                </h1>
+
+                <p class="dashboard-description">
+                    Revisa el estado del sistema, confirma el productor demo y accede al flujo
+                    principal para registrar parcelas y generar recomendaciones inteligentes de riego.
+                </p>
+            </div>
+
+            <div class="dashboard-hero-card">
+                <span class="hero-card-label">MVP activo</span>
+                <strong>AgroRiego IA</strong>
+                <p>
+                    Demo conectada a backend local con motor inteligente de recomendación.
+                </p>
+            </div>
+        </section>
+
+        <section class="kpi-grid" aria-label="Indicadores principales">
+            <article class="kpi-card">
+                <span class="kpi-icon">🧠</span>
+                <div>
+                    <p>Motor IA</p>
+                    <strong>Explicable</strong>
+                </div>
+            </article>
+
+            <article class="kpi-card">
+                <span class="kpi-icon">💧</span>
+                <div>
+                    <p>Decisión</p>
+                    <strong>Riego eficiente</strong>
+                </div>
+            </article>
+
+            <article class="kpi-card">
+                <span class="kpi-icon">⚡</span>
+                <div>
+                    <p>Energía</p>
+                    <strong>kWh + costo</strong>
+                </div>
+            </article>
+        </section>
+
+        <section class="dashboard-grid" aria-label="Información principal del sistema">
+
+            <article class="dashboard-card dashboard-card-featured" aria-labelledby="producer-title">
+                <header class="card-header">
+                    <div>
+                        <span class="card-eyebrow">Usuario activo</span>
+                        <h2 id="producer-title">
+                            Productor demo
+                        </h2>
+                    </div>
+                    <span class="card-icon">👨‍🌾</span>
+                </header>
+
+                <div id="demoUserInfo" class="card-content">
+                    <p>Cargando productor demo...</p>
+                </div>
+            </article>
+
+            <article class="dashboard-card" aria-labelledby="backend-title">
+                <header class="card-header">
+                    <div>
+                        <span class="card-eyebrow">Conectividad</span>
+                        <h2 id="backend-title">
+                            Estado del backend
+                        </h2>
+                    </div>
+                    <span class="card-icon">🟢</span>
+                </header>
+
+                <div id="healthStatus" class="card-content">
+                    <p>Cargando estado del backend...</p>
+                </div>
+            </article>
+
+            <article class="dashboard-card" aria-labelledby="actions-title">
+                <header class="card-header">
+                    <div>
+                        <span class="card-eyebrow">Flujo de demo</span>
+                        <h2 id="actions-title">
+                            Acciones rápidas
+                        </h2>
+                    </div>
+                    <span class="card-icon">🚀</span>
+                </header>
+
+                <div class="card-content actions-list">
+                    <a href="plots.html" class="action-tile">
+                        <span>01</span>
+                        <div>
+                            <strong>Registrar parcela</strong>
+                            <p>Crear la base para cultivo, bomba, clima e IA.</p>
+                        </div>
+                    </a>
+
+                    <a href="recommendation.html" class="action-tile">
+                        <span>02</span>
+                        <div>
+                            <strong>Generar recomendación IA</strong>
+                            <p>Evaluar riego, energía, costo y riesgo hídrico.</p>
+                        </div>
+                    </a>
+                </div>
+            </article>
+
+            <article class="dashboard-card" aria-labelledby="summary-title">
+                <header class="card-header">
+                    <div>
+                        <span class="card-eyebrow">Cómo usarlo</span>
+                        <h2 id="summary-title">
+                            Resumen de la demo
+                        </h2>
+                    </div>
+                    <span class="card-icon">📌</span>
+                </header>
+
+                <div class="card-content demo-flow">
+                    <div class="flow-step">
+                        <span>1</span>
+                        <p>Registra una parcela agrícola.</p>
+                    </div>
+
+                    <div class="flow-step">
+                        <span>2</span>
+                        <p>Agrega cultivo, bomba y clima.</p>
+                    </div>
+
+                    <div class="flow-step">
+                        <span>3</span>
+                        <p>Genera una recomendación inteligente de riego.</p>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+
 </html>

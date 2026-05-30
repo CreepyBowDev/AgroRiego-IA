@@ -2,21 +2,55 @@ const API_URL = "http://localhost:3000/api";
 
 async function request(endpoint, options = {}) {
     try {
-        const response = await fetch(`${API_URL}${endpoint}`, options);
-        const data = await response.json();
+        const config = {
+            ...options,
+            headers: {
+                ...(options.headers || {})
+            }
+        };
 
-        if (!response.ok) {
-            throw new Error(data.message || `Error ${response.status}`);
+        const response = await fetch(`${API_URL}${endpoint}`, config);
+
+        let data = null;
+
+        try {
+            data = await response.json();
+        } catch {
+            data = null;
         }
 
-        return data;
+        if (!response.ok) {
+            return {
+                success: false,
+                status: response.status,
+                message: data?.message || `Error ${response.status}`,
+                error: data?.error || null
+            };
+        }
+
+        return {
+            success: true,
+            ...data
+        };
     } catch (error) {
         console.error("Error API:", error);
+
         return {
             success: false,
-            message: error.message || "No se pudo conectar con el backend."
+            message: error.message || "No se pudo conectar con el backend.",
+            error
         };
     }
+}
+
+function jsonOptions(data) {
+    return {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    };
 }
 
 export async function getHealth() {
@@ -28,13 +62,7 @@ export async function getDemoUser() {
 }
 
 export async function createPlot(data) {
-    return await request("/plots", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    });
+    return await request("/plots", jsonOptions(data));
 }
 
 export async function getPlots() {
@@ -46,13 +74,7 @@ export async function getPlotById(id) {
 }
 
 export async function createCrop(data) {
-    return await request("/crops", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    });
+    return await request("/crops", jsonOptions(data));
 }
 
 export async function getCrops() {
@@ -68,13 +90,7 @@ export async function getCropsByPlot(plotId) {
 }
 
 export async function createPump(data) {
-    return await request("/pumps", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    });
+    return await request("/pumps", jsonOptions(data));
 }
 
 export async function getPumps() {
@@ -90,13 +106,7 @@ export async function getPumpsByPlot(plotId) {
 }
 
 export async function createWeather(data) {
-    return await request("/weather", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    });
+    return await request("/weather", jsonOptions(data));
 }
 
 export async function getWeatherRecords() {
@@ -112,13 +122,7 @@ export async function getLatestWeatherByPlot(plotId) {
 }
 
 export async function generateRecommendation(data) {
-    return await request("/recommendations/generate", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    });
+    return await request("/recommendations/generate", jsonOptions(data));
 }
 
 export async function getRecommendations() {

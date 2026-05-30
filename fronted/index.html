@@ -1,32 +1,191 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroRiego IA</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>AgroRiego IA | Recomendación inteligente de riego</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
+
 <body>
+    <header class="site-header">
+        <nav class="navbar" aria-label="Navegación principal">
+            <a href="index.html" class="logo" aria-label="Ir al inicio">
+                <span class="logo-mark">🌱</span>
+                <span>AgroRiego IA</span>
+            </a>
 
-    <div class="contenedor">
+            <div class="nav-actions">
+                <a href="dashboard.html" class="nav-link">
+                    Dashboard
+                </a>
 
-        <h1>🌱 AgroRiego IA</h1>
+                <a href="plots.html" class="nav-link">
+                    Parcelas
+                </a>
 
-        <h2 class="description">
-            Sistema inteligente de recomendación de riego y eficiencia energética
-            para productores agrícolas.
-        </h2>
+                <a href="recommendation.html" class="nav-link nav-link-strong">
+                    Recomendación IA
+                </a>
+            </div>
+        </nav>
+    </header>
 
+    <main class="landing-page">
+        <section class="hero hero-premium" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <div class="hero-kicker">
+                    <span class="status-dot"></span>
+                    MVP funcional para decisiones agrícolas
+                </div>
+
+                <p class="hero-label">
+                    Agro + Energía
+                </p>
+
+                <h1 id="hero-title">
+                    Riego inteligente para reducir agua, energía y costos.
+                </h1>
+
+                <p class="hero-description">
+                    AgroRiego IA analiza datos de parcela, cultivo, bomba, clima y humedad del suelo
+                    para recomendar si conviene regar, cuánto tiempo hacerlo y cuál será el costo
+                    energético aproximado.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="dashboard.html" class="btn btn-primary">
+                        Iniciar demo
+                    </a>
+
+                    <a href="recommendation.html" class="btn btn-secondary">
+                        Probar recomendación IA
+                    </a>
+                </div>
+
+                <div class="hero-metrics" aria-label="Indicadores del sistema">
+                    <div class="metric-card">
+                        <span>Decisión</span>
+                        <strong>Regar / Esperar</strong>
+                    </div>
+
+                    <div class="metric-card">
+                        <span>Estimación</span>
+                        <strong>kWh + Bs</strong>
+                    </div>
+
+                    <div class="metric-card">
+                        <span>IA</span>
+                        <strong>Explicable</strong>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="hero-side-card" aria-label="Resumen de recomendación">
+                <div class="side-card-header">
+                    <span class="side-card-icon">🤖</span>
+                    <div>
+                        <p class="side-card-label">Resultado esperado</p>
+                        <h2>Recomendación IA</h2>
+                    </div>
+                </div>
+
+                <div class="recommendation-preview">
+                    <div class="preview-status">
+                        <span class="preview-dot"></span>
+                        Se recomienda regar
+                    </div>
+
+                    <div class="preview-grid">
+                        <div>
+                            <span>Prioridad</span>
+                            <strong>Alta</strong>
+                        </div>
+
+                        <div>
+                            <span>Tiempo</span>
+                            <strong>120 min</strong>
+                        </div>
+
+                        <div>
+                            <span>Consumo</span>
+                            <strong>5 kWh</strong>
+                        </div>
+
+                        <div>
+                            <span>Costo</span>
+                            <strong>Bs 6.00</strong>
+                        </div>
+                    </div>
+
+                    <p>
+                        La IA detecta temperatura elevada, humedad baja y cultivo sensible a sequía.
+                    </p>
+                </div>
+            </aside>
+        </section>
+
+        <section class="features" aria-labelledby="features-title">
+            <div class="section-heading">
+                <p class="section-label">
+                    Capacidades principales
+                </p>
+
+                <h2 id="features-title">
+                    Una demo enfocada en el flujo real del productor
+                </h2>
+
+                <p>
+                    El sistema organiza la información agrícola y genera una recomendación clara,
+                    útil y explicable para apoyar la toma de decisiones de riego.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="feature-icon">💧</div>
+                    <h3>Decidir si conviene regar</h3>
+                    <p>
+                        Evalúa condiciones climáticas, suelo y sensibilidad del cultivo para recomendar
+                        regar o esperar.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Calcular tiempo de riego</h3>
+                    <p>
+                        Estima una duración recomendada según el riesgo hídrico detectado por el motor IA.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Medir impacto energético</h3>
+                    <p>
+                        Calcula consumo aproximado en kWh y costo estimado según la potencia de la bomba.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Guardar historial</h3>
+                    <p>
+                        Registra recomendaciones anteriores para revisar decisiones tomadas por parcela.
+                    </p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
         <p>
-            Demo funcional para ayudar a decidir si conviene regar, cuánto tiempo,
-            en qué horario y cuánto costará aproximadamente el consumo energético.
+            AgroRiego IA — MVP de apoyo inteligente para decisiones de riego agrícola.
         </p>
-
-        <a href="dashboard.html">
-            <button>Iniciar Demo</button>
-        </a>
-
-    </div>
-
+    </footer>
 </body>
+
 </html>
