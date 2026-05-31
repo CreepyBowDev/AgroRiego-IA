@@ -318,7 +318,11 @@ AgroRiego IA busca mejorar la toma de decisiones agrícolas, reducir el desperdi
 
 
 ---
+##  pitch
 
+```text
+https://youtu.be/ct9eiO63Qko
+```
 ##  Repositorio
 
 ```text
