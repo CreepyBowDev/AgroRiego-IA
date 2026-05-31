@@ -154,7 +154,7 @@ AgroRiego-IA/
 
 
 
-```md
+
 A continuación se muestran capturas de las principales pantallas del MVP.
 
 ### Pantalla de inicio
@@ -176,8 +176,8 @@ A continuación se muestran capturas de las principales pantallas del MVP.
 ### Resultado generado por la IA.
 
 ![Resultado IA](docs/img/resultado-ia.png)
->>>>>>> 012f0dc (readme.terminado)
-```
+
+
 
 ---
 
