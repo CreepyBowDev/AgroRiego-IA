@@ -156,28 +156,21 @@ AgroRiego-IA/
 
 
 A continuación se muestran capturas de las principales pantallas del MVP.
-
 ### Pantalla de inicio
 
-![Pantalla de inicio](docs/img/inicio.png)
+![Pantalla de inicio](./docs/imagen.jpg)
 
-### Dashboard
+### Registro de parcelas
 
-![Dashboard](docs/img/dashboard.png)
+![Registro de parcelas](./docs/imagen2.png)
 
-### Registro de parcela
+### Recomendación IA
 
-![Registro de parcela](docs/img/registro-parcela.png)
+![Recomendación IA](./docs/imagen3.png)
 
-### Generación de recomendación IA
+### Resultado generado por la IA
 
-![Recomendación IA](docs/img/recomendacion-ia.png)
-
-### Resultado generado por la IA.
-
-![Resultado IA](docs/img/resultado-ia.png)
-
-
+![Resultado IA](./docs/imagen4.png)
 
 ---
 
