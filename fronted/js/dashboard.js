@@ -94,13 +94,13 @@ function renderDemoUser(response) {
 
         <div class="producer-details">
             <div>
-                <span>Teléfono</span>
+                <span>Telefono</span>
                 <strong>${user.phone || "-"}</strong>
             </div>
 
             <div>
                 <span>Tipo</span>
-                <strong>${user.user_type || "Productor"}</strong>
+                <strong>${user.user_type == "pequeño" ? "minorista" : user.user_type || "Productor"}</strong>
             </div>
 
             <div>
