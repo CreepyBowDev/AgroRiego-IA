@@ -148,12 +148,35 @@ AgroRiego-IA/
 
 ---
 
-##  Imágenes referenciales  FALTA
 
-Las capturas del sistema pueden agregarse en una carpeta llamada `docs/img/`.
+=======
+##  Imágenes referenciales  
+
+
 
 ```md
+A continuación se muestran capturas de las principales pantallas del MVP.
 
+### Pantalla de inicio
+
+![Pantalla de inicio](docs/img/inicio.png)
+
+### Dashboard
+
+![Dashboard](docs/img/dashboard.png)
+
+### Registro de parcela
+
+![Registro de parcela](docs/img/registro-parcela.png)
+
+### Generación de recomendación IA
+
+![Recomendación IA](docs/img/recomendacion-ia.png)
+
+### Resultado generado por la IA.
+
+![Resultado IA](docs/img/resultado-ia.png)
+>>>>>>> 012f0dc (readme.terminado)
 ```
 
 ---
