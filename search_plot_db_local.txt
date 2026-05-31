@@ -1,0 +1,220 @@
+﻿C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\backend\controllers\users.controller.js:7: const demoUser = await userModel.getUsersModel();
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\backend\controllers\users.controller.js:8: return sendSuccess(res, "Productores obtenidos correctamente", { data: [demoUser] });
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\backend\controllers\users.controller.js:14: static getDemoUser = async (req, res) => {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\backend\controllers\users.controller.js:16: const demoUser = await userModel.getDemoUserModel();
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\backend\controllers\users.controller.js:17: return sendSuccess(res, "Productor demo obtenido correctamente", { data: demoUser });
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\backend\controllers\users.controller.js:19: return sendError(res, 500, "Error al obtener productor demo", error);
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\backend\models\plots.model.js:13: const plot = Plot.create({
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\backend\models\plots.model.js:15: user_id: "demo-user-1",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\backend\models\plots.model.js:29: return Plot.find().map(normalizePlot);
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\backend\models\plots.model.js:33: const plot = Plot.findOne(id);
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\backend\models\users.model.js:1: const demoUser = {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\backend\models\users.model.js:2: id: "demo-user-1",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\backend\models\users.model.js:3: name: "Productor Demo",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\backend\models\users.model.js:11: static getUsersModel = async () => demoUser;
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\backend\models\users.model.js:12: static getDemoUserModel = async () => demoUser;
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\backend\routes\users.routes.js:7: router.get("/demo", userController.getDemoUser);
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\backend\db.js:4: import dbLocal from "db-local";
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\backend\seed.js:5: // 1. Insertar el Productor Demo
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\backend\seed.js:8: name: "Productor Demo",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\backend\seed.js:15: Plot.create({
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\backend\seed.js:20: community: "Comunidad Demo",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\database\data\User.json:1: [{"_id":1,"name":"Productor Demo","phone":"77712345","zone":"Montero","user_type":"pequeño productor"}]
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\fronted\js\api.js:60: export async function getDemoUser() {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\fronted\js\api.js:61: return await request("/users/demo");
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\fronted\js\dashboard.js:3: getDemoUser,
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\fronted\js\dashboard.js:9: const demoUserInfo = document.getElementById("demoUserInfo");
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\fronted\js\dashboard.js:73: function renderDemoUser(response) {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\fronted\js\dashboard.js:74: if (!demoUserInfo) return;
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\fronted\js\dashboard.js:79: showError(demoUserInfo, "No se pudo cargar el productor demo.");
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\fronted\js\dashboard.js:83: demoUserInfo.innerHTML = `
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\fronted\js\dashboard.js:90: <strong>${user.name || "Productor Demo"}</strong>
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\fronted\js\dashboard.js:107: <span>ID demo</span>
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\fronted\js\dashboard.js:108: <strong>${user.id || "demo-user-1"}</strong>
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\fronted\js\dashboard.js:200: if (demoUserInfo) {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\fronted\js\dashboard.js:201: demoUserInfo.innerHTML = `
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\fronted\js\dashboard.js:204: <p>Cargando productor demo...</p>
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\fronted\js\dashboard.js:209: const [healthResponse, demoResponse, plotsResponse, recommendationsResponse] = await Promise.all([
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\fronted\js\dashboard.js:211: getDemoUser(),
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\fronted\js\dashboard.js:222: if (demoResponse.success === false) {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\fronted\js\dashboard.js:223: showError(demoUserInfo, "No se pudo cargar el productor demo.");
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\fronted\js\dashboard.js:225: renderDemoUser(demoResponse);
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\fronted\js\plots.js:36: <p>No hay parcelas cargadas todavía. Registra la primera parcela para iniciar la demo.</p>
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\db-local\lib\modules\methods.js:248: '[db-local] No data was entered to replace the current one, an empty array was defined by default'
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\db-local\package.json:2: "name": "db-local",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\db-local\package.json:11: "homepage": "https://github.com/lenn-xsr/db-local#readme",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\db-local\package.json:13: "db-local",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\db-local\package.json:24: "url": "https://github.com/lenn-xsr/db-local/issues"
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\db-local\package.json:28: "url": "git+https://github.com/lenn-xsr/db-local.git"
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\es-errors\tsconfig.json:28: "maxNodeModuleJsDepth": 1,													 /* Specify the maximum folder depth used for checking JavaScript files from `node_modules`. Only applicable with `allowJs`. */
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\etag\package.json:29: "seedrandom": "2.4.3"
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\get-intrinsic\test\GetIntrinsic.js:11: var mockProperty = require('mock-property');
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\get-intrinsic\test\GetIntrinsic.js:160: var restore = mockProperty(Object.prototype, 'propertyIsEnumerable', {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\get-intrinsic\package.json:71: "mock-property": "^1.1.0",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\has-symbols\tsconfig.json:5: "maxNodeModuleJsDepth": 0,
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\hasown\package.json:64: "mock-property": "^1.1.0",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\mime-db\db.json:3313: "application/vnd.fdsn.mseed": {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\mime-db\db.json:3315: "extensions": ["mseed"]
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\mime-db\db.json:3317: "application/vnd.fdsn.seed": {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\mime-db\db.json:3319: "extensions": ["seed","dataless"]
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\multer\node_modules\mime-db\db.json:2871: "application/vnd.fdsn.mseed": {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\multer\node_modules\mime-db\db.json:2873: "extensions": ["mseed"]
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\multer\node_modules\mime-db\db.json:2875: "application/vnd.fdsn.seed": {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\multer\node_modules\mime-db\db.json:2877: "extensions": ["seed","dataless"]
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\bin\nodemon.js:4: const nodemon = require('../lib/');
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\bin\nodemon.js:7: nodemon(options);
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\index.js:6: * This is a utility function to allow calling nodemon as a required
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:3: nodemon is a utility for node, and replaces the use of the executable
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:4: node. So the user calls `nodemon foo.js` instead.
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:6: nodemon can be run in a number of ways:
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:8: `nodemon` - tries to use package.json#main property to run
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:9: `nodemon` - if no package, looks for index.js
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:10: `nodemon app.js` - runs app.js
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:11: `nodemon --arg app.js --apparg` - eats arg1, and runs app.js with apparg
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:12: `nodemon --apparg` - as above, but passes apparg to package.json#main (or
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:14: `nodemon --debug app.js
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:26: * nodemon options, the user script and the executable script.
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:44: var nodemonOptions = { scriptPosition: null };
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:46: var nodemonOpt = nodemonOption.bind(null, nodemonOptions);
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:60: nodemonOptions.scriptPosition = i;
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:70: nodemonOptions.scriptPosition = i;
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:74: // ignore all further nodemon arguments
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:81: if (nodemonOpt(args[i], eat.bind(null, i, args)) !== false) {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:89: nodemonOptions.script = script;
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:90: nodemonOptions.args = args;
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:92: return nodemonOptions;
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:97: * Given an argument (ie. from process.argv), sets nodemon
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:100: * @param {import('../..').NodemonSettings} options object that will be updated
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:103: * @return {Boolean} false if argument was not a nodemon arg
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:105: function nodemonOption(options, arg, eatNext) {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:198: // go ahead and change directory. This is primarily for nodemon tools like
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:199: // grunt-nodemon - we're doing this early because it will affect where the
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\cli\parse.js:210: * Given an argument (ie. from nodemonOption()), will parse and return the
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\defaults.js:21: // 'stdout' refers to the default behaviour of a required nodemon's child,
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\defaults.js:23: // nodemon.on('stdout/stderr')
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\exec.js:20: // note: this isn't nodemon's package, it's the user's cwd package
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\exec.js:31: if (parts.includes('nodemon')) {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\exec.js:73: * @param  {Object} nodemonOptions
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\exec.js:75: * @return {Object} new and updated version of nodemonOptions
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\exec.js:77: function exec(nodemonOptions, execMap) {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\exec.js:82: var options = utils.clone(nodemonOptions || {});
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\exec.js:101: // should be parsed first, then the user options (via nodemon.json) then
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\exec.js:118: // var options = utils.clone(nodemonOptions || {});
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\exec.js:133: // https://github.com/remy/nodemon/issues/195
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\exec.js:140: options.execArgs = nodemonOptions.execArgs || [];
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\exec.js:185: // for example, in `nodemon --debug my-script.coffee --my-flag`, debug is an
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\exec.js:215: // BIG NOTE: user can't do this: nodemon -e *.js
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\exec.js:233: if ({}.toString.apply(nodemonOptions.env) === '[object Object]') {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\exec.js:234: options.env = utils.clone(nodemonOptions.env);
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\exec.js:235: } else if (nodemonOptions.env !== undefined) {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\exec.js:236: throw new Error('nodemon env values must be an object: { PORT: 8000 }');
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\index.js:2: * Manages the internal config of nodemon, checking for the state of support
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\index.js:3: * with fs.watch, how nodemon can watch files (using find or fs methods).
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\index.js:7: var debug = require('debug')('nodemon');
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\index.js:38: * look for local and global nodemon.json files and merge together the final
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\index.js:39: * settings with the config for nodemon.
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\index.js:41: * @param  {Object} settings user defined settings for nodemon (typically on
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\load.js:1: var debug = require('debug')('nodemon');
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\load.js:17: // nodemon has been run alone, so try to read the package file
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\load.js:29: * Load the nodemon config, first reading the global root/nodemon.json, then
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\load.js:30: * the local nodemon.json to the exec and then overwriting using any user
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\load.js:40: // first load the root nodemon.json
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\load.js:143: // prefer the local nodemon.json and fill in missing items using
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\load.js:152: var filename = options.configFile || path.join(dir, 'nodemon.json');
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\load.js:163: // if no specified local config file and local nodemon.json
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\load.js:175: if (!filename.endsWith('package.json') || settings.nodemonConfig) {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\config\load.js:198: ready(settings.nodemonConfig || {});
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\monitor\match.js:4: const debug = require('debug')('nodemon:match');
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\monitor\run.js:1: var debug = require('debug')('nodemon:run');
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\monitor\run.js:212: utils.log.error('To keep nodemon running even after a code 2,');
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\monitor\run.js:217: utils.log.error('nodemon will stop now so that you can fix the command.');
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\monitor\run.js:290: // ref: https://github.com/remy/nodemon/issues/1195
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\monitor\run.js:302: 'nodemon may not work as expected - ' +
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\monitor\run.js:395: // process group to avoid terminating the nodemon process itself.
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\monitor\run.js:410: // we use psTree to kill the full subtree of nodemon, because when
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\monitor\run.js:412: // it's own child, and that can't be killed by nodemon, so psTree gives us
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\monitor\run.js:413: // an array of PIDs that have spawned under nodemon, and we send each the
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\monitor\run.js:464: /* Now kill the entire subtree of processes belonging to nodemon */
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\monitor\watch.js:4: var debug = require('debug')('nodemon:watch');
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\monitor\watch.js:5: var debugRoot = require('debug')('nodemon');
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\monitor\watch.js:63: // bugs elsewhere (since nodemon is used is so many ways). the final
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\monitor\watch.js:125: // this is a core error and it should break nodemon - so I have to break
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\rules\add.js:16: * Converts file patterns or regular expressions to nodemon
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\rules\index.js:10: * Loads a nodemon config file and populates the ignore
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\rules\parse.js:5: * Parse the nodemon config file, supporting both old style
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\utils\bus.js:2: var debug = require('debug')('nodemon');
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\utils\bus.js:35: // if nodemon was spawned via a fork, allow upstream communication
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\utils\index.js:28: if (p.filename.indexOf('bin' + path.sep + 'nodemon.js') !== -1) {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\utils\log.js:16: var msg = '[nodemon] ' + (text || '');
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\index.js:1: module.exports = require('./nodemon');
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:1: var debug = require('debug')('nodemon');
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:10: /** @type {import('..').NodemonEventConfig} */
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:21: * @param {import('..').NodemonSettings | string} settings
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:22: * @returns {import('..').Nodemon}
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:24: function nodemon(settings) {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:26: nodemon.reset();
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:28: /** @type {import('..').NodemonSettings} */
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:31: // allow the cli string as the argument to nodemon, and allow for
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:32: // `node nodemon -V app.js` or just `-V app.js`
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:36: if (settings.indexOf('nodemon') !== 0) {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:37: settings = 'nodemon ' + settings;
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:69: // nodemon tools like grunt-nodemon. This affects where
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:71: // nodemon looks for the nodemon.json files
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:107: // allow nodemon to restart when the use types 'rs\n'
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:162: process.on(restartSignal, nodemon.restart);
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:208: utils.log._log('log', 'nodemon: ' + version.pinned);
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:225: nodemon.on('start', function () {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:226: nodemon.stdout = bus.stdout;
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:227: nodemon.stderr = bus.stderr;
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:237: nodemon.on(key, function () {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:250: return nodemon;
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:253: nodemon.restart = function () {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:256: return nodemon;
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:259: nodemon.addListener = nodemon.on = function (event, handler) {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:263: return nodemon;
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:266: nodemon.once = function (event, handler) {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:274: return nodemon;
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:277: nodemon.emit = function () {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:279: return nodemon;
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:282: nodemon.removeAllListeners = function (event) {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:283: // unbind only the `nodemon.on` event handlers
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:293: return nodemon;
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:296: nodemon.reset = function (done) {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:302: nodemon.removeAllListeners();
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:314: nodemon.config = config;
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\lib\nodemon.js:316: module.exports = nodemon;
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\package.json:2: "name": "nodemon",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\package.json:3: "homepage": "https://nodemon.io",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\package.json:9: "nodemon": "./bin/nodemon.js"
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\package.json:16: "url": "https://github.com/remy/nodemon.git"
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\package.json:31: "main": "./lib/nodemon",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\nodemon\package.json:73: "url": "https://opencollective.com/nodemon"
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\object-inspect\test\has.js:5: var mockProperty = require('mock-property');
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\object-inspect\test\has.js:11: t.teardown(mockProperty(Array.prototype, 1, { value: 2 })); // this is needed to account for "in" vs "hasOwnProperty"
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\object-inspect\test\has.js:12: t.teardown(mockProperty(Object.prototype, 'hasOwnProperty', { 'delete': true }));
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\object-inspect\test\values.js:5: var mockProperty = require('mock-property');
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\object-inspect\test\values.js:29: t.teardown(mockProperty(Object.prototype, 'hasOwnProperty', { 'delete': true }));
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\object-inspect\package.json:24: "mock-property": "^1.1.0",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\qs\test\parse.js:6: var mockProperty = require('mock-property');
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\qs\test\parse.js:701: var restore = mockProperty(global, 'Buffer', { 'delete': true });
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\qs\test\parse.js:807: st.teardown(mockProperty(Object.prototype, 'frozenProp', { value: 'foo', nonWritable: true, nonEnumerable: true }));
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\qs\test\stringify.js:9: var mockProperty = require('mock-property');
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\qs\test\stringify.js:770: var restore = mockProperty(global, 'Buffer', { 'delete': true });
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\qs\package.json:59: "mock-property": "^1.1.0",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\.package-lock.json:271: "node_modules/db-local": {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\.package-lock.json:273: "resolved": "https://registry.npmjs.org/db-local/-/db-local-3.1.0.tgz",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\.package-lock.json:877: "node_modules/nodemon": {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\.package-lock.json:879: "resolved": "https://registry.npmjs.org/nodemon/-/nodemon-3.1.14.tgz",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\.package-lock.json:896: "nodemon": "bin/nodemon.js"
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\node_modules\.package-lock.json:903: "url": "https://opencollective.com/nodemon"
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\package-lock.json:13: "db-local": "^3.1.0",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\package-lock.json:18: "nodemon": "^3.0.1"
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\package-lock.json:241: "node_modules/db-local": {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\package-lock.json:243: "resolved": "https://registry.npmjs.org/db-local/-/db-local-3.1.0.tgz",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\package-lock.json:773: "node_modules/nodemon": {
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\package-lock.json:775: "resolved": "https://registry.npmjs.org/nodemon/-/nodemon-3.1.14.tgz",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\package-lock.json:792: "nodemon": "bin/nodemon.js"
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\package-lock.json:799: "url": "https://opencollective.com/nodemon"
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\package.json:8: "dev": "nodemon backend/server.js",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\package.json:13: "db-local": "^3.1.0",
+C:\Users\jesus\Desktop\Hackaton\AgroRieogIA\package.json:18: "nodemon": "^3.0.1"

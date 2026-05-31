@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Recomendación IA | AgroRiego IA</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navbar" aria-label="Navegación principal">
+            <a href="index.html" class="logo" aria-label="Ir al inicio">
+                <span class="logo-mark">🌱</span>
+                <span>AgroRiego IA</span>
+            </a>
+
+            <div class="nav-actions">
+                <a href="dashboard.html" class="nav-link">
+                    Dashboard
+                </a>
+
+                <a href="plots.html" class="nav-link">
+                    Parcelas
+                </a>
+
+                <a href="recommendation.html" class="nav-link nav-link-strong">
+                    IA
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="recommendation-page">
+        <section class="page-hero recommendation-hero" aria-labelledby="recommendation-title">
+            <div>
+                <p class="section-label">
+                    Recomendación inteligente
+                </p>
+
+                <h1 id="recommendation-title">
+                    Generar recomendación de riego
+                </h1>
+
+                <p class="page-description">
+                    Selecciona una parcela, completa sus datos técnicos y genera una recomendación
+                    inteligente con riesgo hídrico, tiempo sugerido, consumo energético y costo estimado.
+                </p>
+            </div>
+
+            <aside class="page-hero-note">
+                <span>IA</span>
+                <p>
+                    El motor analiza cultivo, bomba, clima y humedad del suelo para entregar una decisión explicable.
+                </p>
+            </aside>
+        </section>
+
+        <section class="recommendation-workspace" aria-label="Área principal de recomendación">
+
+            <section class="selection-panel" aria-labelledby="selection-title">
+                <div class="selection-content">
+                    <div>
+                        <span class="card-eyebrow">Paso inicial</span>
+                        <h2 id="selection-title">Selecciona una parcela</h2>
+                        <p>
+                            La recomendación se genera sobre una parcela activa. Si no tienes parcelas,
+                            registra una primero.
+                        </p>
+                    </div>
+
+                    <div class="selection-control">
+                        <label for="plot_id">Parcela activa</label>
+                        <select id="plot_id" name="plot_id" required>
+                            <option value="">Cargando parcelas...</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <section class="data-overview" aria-labelledby="loaded-data-title">
+                <div class="section-heading compact-heading">
+                    <p class="section-label">Datos cargados</p>
+                    <h2 id="loaded-data-title">Información disponible de la parcela</h2>
+                    <p>
+                        Estos módulos muestran qué datos ya existen y cuáles se usarán para la IA.
+                    </p>
+                </div>
+
+                <div class="data-grid">
+                    <article class="data-card" id="plotInfo">
+                        <div class="empty-state compact">
+                            <span>📍</span>
+                            <p>Seleccione una parcela para ver sus datos.</p>
+                        </div>
+                    </article>
+
+                    <article class="data-card" id="cropInfo">
+                        <div class="empty-state compact">
+                            <span>🌽</span>
+                            <p>Aún no hay cultivo cargado.</p>
+                        </div>
+                    </article>
+
+                    <article class="data-card" id="pumpInfo">
+                        <div class="empty-state compact">
+                            <span>⚡</span>
+                            <p>Aún no hay bomba cargada.</p>
+                        </div>
+                    </article>
+
+                    <article class="data-card" id="weatherInfo">
+                        <div class="empty-state compact">
+                            <span>☀️</span>
+                            <p>Aún no hay clima cargado.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="recommendation-layout refined-layout" aria-label="Formulario y resultados de recomendación">
+
+                <article class="form-card elevated-card" aria-labelledby="form-title">
+                    <header class="card-header">
+                        <div>
+                            <span class="card-eyebrow">Datos técnicos</span>
+                            <h2 id="form-title">
+                                Completar información para la IA
+                            </h2>
+                        </div>
+                        <span class="card-icon">🧠</span>
+                    </header>
+
+                    <form id="recommendationForm" class="recommendation-form">
+
+                        <div class="module-stack">
+
+                            <fieldset class="form-section module-section">
+                                <legend>🌽 Cultivo / semilla</legend>
+
+                                <div class="form-grid two-columns">
+                                    <div class="form-group">
+                                        <label for="crop_name">Nombre del cultivo</label>
+                                        <input type="text" id="crop_name" name="crop_name" value="Maíz" required />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="crop_stage">Etapa del cultivo</label>
+                                        <input type="text" id="crop_stage" name="crop_stage"
+                                            value="Crecimiento vegetativo" required />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="sowing_date">Fecha de siembra</label>
+                                        <input type="date" id="sowing_date" name="sowing_date" required />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="drought_sensitivity">Sensibilidad a sequía</label>
+                                        <select id="drought_sensitivity" name="drought_sensitivity" required>
+                                            <option value="Alta">Alta</option>
+                                            <option value="Media">Media</option>
+                                            <option value="Baja">Baja</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="form-section module-section">
+                                <legend>⚡ Bomba de riego</legend>
+
+                                <div class="form-grid two-columns">
+                                    <div class="form-group">
+                                        <label for="pump_type">Tipo de bomba</label>
+                                        <input type="text" id="pump_type" name="pump_type" value="Eléctrica" required />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="power_kw">Potencia kW</label>
+                                        <input type="number" id="power_kw" name="power_kw" value="2.5" min="0"
+                                            step="0.1" required />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="flow_liters_minute">Caudal litros/minuto</label>
+                                        <input type="number" id="flow_liters_minute" name="flow_liters_minute"
+                                            value="120" min="0" step="1" required />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="cost_kwh">Costo por kWh en Bs</label>
+                                        <input type="number" id="cost_kwh" name="cost_kwh" value="1.2" min="0"
+                                            step="0.1" required />
+                                    </div>
+
+                                    <div class="form-group full-width">
+                                        <label for="energy_source">Fuente de energía</label>
+                                        <input type="text" id="energy_source" name="energy_source"
+                                            value="Energía eléctrica" required />
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="form-section module-section">
+                                <legend>☀️ Clima de referencia</legend>
+
+                                <div class="form-grid two-columns">
+                                    <div class="form-group">
+                                        <label for="temperature">Temperatura °C</label>
+                                        <input type="number" id="temperature" name="temperature" value="34" step="0.1"
+                                            required />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="humidity">Humedad ambiental %</label>
+                                        <input type="number" id="humidity" name="humidity" value="35" min="0" max="100"
+                                            step="1" required />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="rain_probability">Probabilidad de lluvia %</label>
+                                        <input type="number" id="rain_probability" name="rain_probability" value="15"
+                                            min="0" max="100" step="1" required />
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="wind_speed">Velocidad del viento km/h</label>
+                                        <input type="number" id="wind_speed" name="wind_speed" value="12" min="0"
+                                            step="0.1" required />
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="form-section module-section important-section">
+                                <legend>💧 Suelo y observación</legend>
+
+                                <div class="form-grid two-columns">
+                                    <div class="form-group">
+                                        <label for="soil_moisture_estimated">Humedad estimada del suelo %</label>
+                                        <input type="number" id="soil_moisture_estimated" name="soil_moisture_estimated"
+                                            value="25" min="0" max="100" step="1" required />
+                                    </div>
+
+                                    <div class="form-group full-width">
+                                        <label for="producer_observation">Observación del productor</label>
+                                        <textarea id="producer_observation" name="producer_observation"
+                                            rows="3">El suelo se ve seco</textarea>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                        </div>
+
+                        <div class="form-actions sticky-actions">
+                            <button type="submit" class="btn btn-primary">
+                                Generar recomendación IA
+                            </button>
+
+                            <a href="plots.html" class="btn btn-secondary">
+                                Registrar otra parcela
+                            </a>
+                        </div>
+
+                        <p id="message" class="form-message" aria-live="polite"></p>
+                    </form>
+                </article>
+
+                <aside class="recommendation-sidebar" aria-label="Resultado e historial">
+
+                    <article class="result-card ai-result-card" id="resultCard" aria-labelledby="result-title" hidden>
+                        <header class="card-header">
+                            <div>
+                                <span class="card-eyebrow">Resultado del motor IA</span>
+                                <h2 id="result-title">
+                                    Recomendación generada
+                                </h2>
+                            </div>
+                            <span class="card-icon">🤖</span>
+                        </header>
+
+                        <div id="recommendationResult" class="result-content"></div>
+                    </article>
+
+                    <article class="history-card elevated-card" aria-labelledby="history-title">
+                        <header class="card-header">
+                            <div>
+                                <span class="card-eyebrow">Historial</span>
+                                <h2 id="history-title">
+                                    Recomendaciones de la parcela
+                                </h2>
+                            </div>
+                            <span class="card-icon">🕒</span>
+                        </header>
+
+                        <div id="historyList" class="history-list">
+                            <div class="empty-state compact">
+                                <span>📋</span>
+                                <p>Selecciona una parcela para ver el historial.</p>
+                            </div>
+                        </div>
+                    </article>
+
+                </aside>
+
+            </section>
+        </section>
+
+        <section class="page-actions" aria-label="Acciones de navegación">
+            <a href="plots.html" class="btn btn-secondary">
+                ← Volver a parcelas
+            </a>
+
+            <a href="dashboard.html" class="btn btn-primary">
+                Volver al dashboard →
+            </a>
+        </section>
+    </main>
+
+    <script type="module" src="js/recommendation.js"></script>
+</body>
+
+</html>
